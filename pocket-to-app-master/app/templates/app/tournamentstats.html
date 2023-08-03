@@ -1,0 +1,245 @@
+{% extends "app/base.html" %}
+{% block content %}
+<h1>{{Name}}</h1>
+{% if not isRunning %}
+  <!-- Start of end of match details -->
+  <h2>Participants Ranking</h2>
+  <div class="form-group">
+    <!-- Start of table with participants ranking -->
+    <div>
+      {%if top %}
+        <table class="table table-dark rankings_table" border="1">
+          <tr>
+            <th class="player_name_text" style="width: 30%">Players</th>
+            <th class="player_name_text" style="width: 30%">Score</th>
+          </tr>
+          {% for player in top %}
+            <tr>
+              <td>
+                <a class="player_name_text" 
+                href="/playerspage/playerstats/{{ player.0 }}">
+                    {{ player.0.name }}
+                </a>
+              </td>
+              <td>{{ player.1 }}</td>
+            </tr>
+          {% endfor %}
+        </table>
+      {% endif %}
+    </div>  <!-- End of table with participants ranking -->
+    <!-- Start of Medals Gridview -->
+    <div class="form-col" style="margin-top: 30px">
+      <h2>Medals</h2>
+      <div class="card">
+        {% if medals %}
+          <div class="card-header">Medals Achieved</div>
+          <div class="card-body row h-100">
+              {% for medal in medals %}
+                <div class="col-self img_grid"  data-toggle="modal" 
+                  data-target="#{{medal.name.split | join:''}}">
+                  <img src="/media/{{medal.name}}.png" width="165px" 
+                      height="165px">
+                  <figcaption class="medal_img_caption">
+                    {{medal.name}}
+                  </figcaption>
+                  <figcaption class="player_name_caption">
+                    {{medal.player.name}}
+                  </figcaption>
+                </div>
+                {% with medal.name as medal_name %}
+                  {% include "app/medalsinfo.html" %}
+                {% endwith %}
+              {% endfor %}
+          </div>
+        {% endif %}
+      </div>
+    </div> <!-- End of Medals Gridview -->
+  </div> <!-- End of end of match details -->
+{% endif %}
+<form method="POST">
+  {% csrf_token %}
+  <!-- Start of matches content -->
+  <div class="form-row" style="margin-bottom: 20px">
+    {% for round in rounds %}
+      <table class="table table-dark no_table_spacing" border="1">
+        {% if currentRound == round and isRunning %}
+          <tr>
+            <th id="{{round}}" 
+            colspan="5" style="text-align: center;">Round {{ round }}</th>
+        {% else %}
+          <tr style="cursor: pointer;" 
+          data-toggle="collapse" data-target=".order{{round}}" 
+          data-parent="#accordionExample"
+          onclick="accordionStatus('{{round}}')" aria-expanded = 'true'>
+            <th id="{{round}}" colspan="5" 
+                data-toggle="tooltip" data-placement="top" 
+                title="Click To Show" 
+                style="text-align: center;">Round {{ round }} (Show)</th>
+        {% endif %}
+          <th style="text-align: center; width: 15%">Options</th>
+        </tr>
+        {% for pairing in pairings %}
+          {% if pairing.round_num == round %}
+            <div>
+              {% if currentRound == round and isRunning %}
+                <tr style="height: 50px" class="collapse show order{{round}}">
+              {% else %}
+                <tr style="height: 50px" class="collapse order{{round}}">
+              {% endif %}
+              {% if pairing.winner == pairing.player1%}
+                <td class="winner" data-toggle="tooltip" 
+                data-placement="top" title="{{pairing.winner}} Won">
+                <a class="player_name_text" 
+                    href="/playerspage/playerstats/{{ pairing.player1 }}">
+                  {{ pairing.player1 }}
+                </a>
+                </td>
+              {% elif pairing.winner == pairing.player2 %}
+                <td class="loser" data-toggle="tooltip" 
+                data-placement="top" title="{{pairing.player1}} Loses">
+                  <a class="player_name_text" 
+                      href="/playerspage/playerstats/{{ pairing.player1 }}">
+                    {{ pairing.player1 }}
+                  </a>
+                </td>
+              {% elif pairing.winner.name == 'Draw'%}
+                <td class="draw" data-toggle="tooltip" 
+                data-placement="top" title="Draw">
+                  <a class="player_name_text" 
+                  href="/playerspage/playerstats/{{ pairing.player1 }}" 
+                  style="color: white">
+                    {{ pairing.player1 }}
+                  </a>
+                </td>
+              {% else %}
+                <td id="{{ pairing.player1 }}"
+                  style="text-align: center; width:400px;">
+                  <a class="player_name_text" 
+                      href="/playerspage/playerstats/{{ pairing.player1 }}">
+                    {{ pairing.player1 }}
+                  </a>
+                </td>
+              {% endif %}
+              {% if pairing.winner == None %}
+                <!-- Start of checlist td -->
+                <td style="width:5%; cursor: default" data-toggle="tooltip" 
+                data-placement="top" title="Click to add winner">
+                  <div class="form-check">
+                        <input class="form-check-input" type="radio" 
+                        value="{{ pairing.player1 }}" 
+                        id="radioCheck" name="{{ pairing.name }}"
+                        style="margin-left: -11px" data-toggle="tooltip" 
+                        data-placement="top" title="Click to add winner"
+                        onclick="adaptButton('{{ pairing.name }}', false);
+                        chgEndMatchColour('{{ pairing.player1 }}', '{{ pairing.player2 }}');">
+                    </div>
+                </td> <!-- End of checklist td -->
+              {% else %}
+                 <td style="width:5%; cursor: default"></td>
+              {% endif %}
+              
+              <td class="vs">vs</td>
+              
+              {% if pairing.winner == None %}  
+                <!-- Start of checlist td -->
+                <td style="width:5%; cursor: default" data-toggle="tooltip" 
+                data-placement="top" title="Click to add winner">
+                   <div class="form-check">
+                      <input class="form-check-input" type="radio" 
+                      value="{{ pairing.player2 }}" 
+                      id="radioCheck" name="{{ pairing.name }}"
+                      style="margin-left: -11px" data-toggle="tooltip" 
+                      data-placement="top" title="Click to add winner" 
+                      onclick="adaptButton('{{ pairing.name }}', false);
+                      chgEndMatchColour('{{ pairing.player2 }}', '{{ pairing.player1 }}');">
+                  </div>
+              </td> <!-- End of checklist td -->
+              {% else %}
+                 <td style="width:5%; cursor: default"></td>
+              {% endif %}
+              
+              {% if pairing.winner == pairing.player2 %}
+                <td class="winner" data-toggle="tooltip" 
+                data-placement="top" title="{{pairing.winner}} Won">
+                  <a class="player_name_text" 
+                      href="/playerspage/playerstats/{{ pairing.player2 }}">
+                    {{ pairing.player2 }}
+                  </a>
+                </td>
+              {% elif pairing.winner == pairing.player1 %}
+                <td class="loser" data-toggle="tooltip" 
+                    data-placement="top" title="{{pairing.player2}} Loses">
+                  <a class="player_name_text" 
+                      href="/playerspage/playerstats/{{ pairing.player2 }}">
+                    {{ pairing.player2 }}
+                  </a>
+                </td>
+              {% elif pairing.winner.name == 'Draw'%}
+                <td class="draw" data-toggle="tooltip" data-placement="top" 
+                    title="Draw">
+                    <a class="player_name_text" 
+                        href="/playerspage/playerstats/{{ pairing.player2 }}">
+                      {{ pairing.player2 }}
+                    </a>
+                </td>
+              {% else %}
+                <td id="{{ pairing.player2 }}"
+                 style="text-align: center; width:400px;">
+                    <a class="player_name_text" 
+                        href="/playerspage/playerstats/{{ pairing.player2 }}">
+                      {{ pairing.player2 }}
+                    </a>
+                </td>
+              {% endif %}
+              <td style="width: 15%">
+                {% if isRunning and currentRound == round %}
+                  <div class="dropright btn-group">
+                    <button type="button" data-target="dropdownMenuButton" 
+                    class="btn btn-dark dropdown-toggle show" 
+                    data-toggle="dropdown">
+                      Match Options
+                    </button>
+                    <div class="dropdown-menu" 
+                    aria-labelledby="dropdownMenuButton">
+                      {% if pairing.winner %}
+                          <button class="dropdown-item" type="submit" 
+                          onclick="undo('{{ pairing.name }}')"
+                          class="btn btn-dark" 
+                          name="undoButton" 
+                          value="{{pairing.name}}">
+                            Undo Match
+                          </button>
+                      {% else %}
+                          <button class="dropdown-item" type="button" 
+                          onclick="undo('{{ pairing.name }}'); 
+                          undoColour('{{pairing.player1}}','{{pairing.player2}}')"
+                          class="btn btn-dark" id="{{ pairing.name }}undo" 
+                          disabled>
+                            Undo Selection
+                          </button>
+
+                          <button class="dropdown-item btn btn-dark" 
+                          type="button" id="{{ pairing.name }}draw"
+                          name="drawButton" onclick="drawMatch('{{ pairing.name }}'); 
+                          chgDrawColour('{{ pairing.player1 }}', 
+                          '{{ pairing.player2 }}');">Draw</button>
+                          <input type="hidden" name="{{ pairing.name }}drawInput"
+                          id="{{ pairing.name }}drawInput">
+                      {% endif %}
+                    </div>
+                    {% endif %}
+                  </div>  
+                </td>
+              </tr>
+            </div>
+          {% endif %}
+        {% endfor %}
+      </table>
+    {% endfor %}
+    {% if isRunning %}
+      <button class="btn btn-dark" type="submit" 
+      id="endMatchbutton" disabled style="margin-top: 20px">End Match</button>
+    {% endif %}
+  </div> <!-- End of matches content-->
+</form>
+{% endblock content %}

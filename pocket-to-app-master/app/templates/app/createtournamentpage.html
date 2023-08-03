@@ -1,0 +1,135 @@
+{% extends "app/base.html" %}
+{% block content %}
+<h1>Create A Tournament</h1>
+<form autocomplete="off">
+  {% csrf_token %}
+  <div class="form-group" style="margin-top: 30px">
+    <div class="row">
+      <div class="col" style="margin-bottom: 10px">
+        <div class="card create_li">
+          <div class="card-body h-100">
+            <div class="form-group">
+              <label for="tournament_name">
+                <h4>Tournament Name</h4>
+              </label>
+              <div class="input-group">
+                 <input type="text" class="form-control" 
+                id="tournament_name" name="tournament_name"
+                value="Tournament #{{tournament_num}}">
+              </div>
+              <label for="availablePlayers">
+                 <h4 style="margin-top: 20px;">Available Players</h4>
+              </label>
+              <div class="input-group">
+                <input type="text" class="form-control" 
+                onkeyup="getPlayers()" id="availablePlayers" autocomplete="off">
+                <span class="input-group-btn">
+                  <button class="btn btn-dark" type="button" 
+                  style="margin-left: 10px" id="addToRegistered" 
+                  onclick="moveToSortable2('availablePlayers')">
+                    Add Player
+                  </button>
+                </span>
+              </div>
+              <div class="input-group">
+                <div class="list-group" style="margin-top: 70px">
+                  <ul id="sortable1" class="connectedSortable list-group sortable">
+                    {%if players %}
+                      {% for player in players %}
+                          <li class="list-group-item" 
+                          style="color: white">{{ player }}</li>
+                      {% endfor %}
+                    {% endif %}  
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col" style="margin-bottom: 10px">
+        <div class="card create_li">
+          <div class="card-body h-100">
+            <label for="season_name">
+              <h4>Season</h4>
+            </label>
+            <div class="form-group">
+              <div class="input-group">
+                <select id="season_name" class="form-control" 
+                name="season_name" data-live-search="true">
+                  <option selected>
+                    {{default_season_name}}
+                  </option>
+                  {% for season in seasons %}
+                    <option>{{season.name}}</option>
+                  {% endfor %}
+                </select>
+                 <span class="input-group-btn">
+                    <button class="btn btn-dark" type="button" 
+                    style="margin-left: 10px" data-toggle="modal"
+                    data-target="#customs_season_name">
+                      Create Season
+                    </button>
+                </span>
+              </div>
+              <div class="form-group">
+                <label for="tournament_type">
+                  <h4 style="margin-top: 20px;">Tournament Types</h4>
+                </label>
+                <select id="tournament_type" class="form-control" 
+                name="tournament_type">
+                  <option selected>Choose ...</option>
+                  <option>Team match</option>
+                  <option>Deathmatch</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <h4 id="numPlayers">
+                  Registered Players - Number Of Participants: 0
+                </h4>
+                <ul id="sortable2" class="connectedSortable list-group sortable" 
+                    style="margin-top: 25px">
+                </ul>
+                <div class="form-col">
+                  <button class="btn btn-dark" 
+                  type="submit" style="margin-top: 10px" 
+                  onclick="addPlayers()" id="launchButton" 
+                  disabled onkeypress="">Launch</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</form>
+
+<!-- Modal -->
+<div class="modal fade bd-example-modal-md" id="customs_season_name" tabindex="-1" 
+  role="dialog" aria-labelledby="medalsModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-md" role="document">
+    <div class="modal-content" style="background-color: #020432">
+      <div class="modal-header" style="background-color: #010114; border-color: #010114">
+        <h5 class="modal-title" id="medalsModalLabel">Create Season</h5>
+        <button style="color: white" type="button" class="close" 
+        data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body" style="margin-top: 10px">
+        <div class="input-group">
+          <input type="text" class="form-control" 
+          onkeyup="getPlayers()" id="newSeason" autocomplete="off">
+          <span class="input-group-btn">
+            <button class="btn btn-dark" type="button" style="margin-left: 10px"
+            onclick="addInputToOption('#season_name', 'newSeason')" data-dismiss="modal">
+              Create
+            </button>
+          </span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock content %}

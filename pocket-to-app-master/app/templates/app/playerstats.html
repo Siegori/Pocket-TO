@@ -1,0 +1,153 @@
+{% extends "app/base.html" %}
+{% block content %}
+
+<!--Start page title -->
+<div class="form-row">
+	<h1>{{name}}'s Tournaments History</h1>
+</div> <!-- End page title -->
+
+<!-- Start Pie Chart -->
+<div class="form-group">
+	<h2 style="margin-top: 50px">Rankings Pie Chart</h2>
+	<div class="page-content page-container" id="page-content">
+	    <div class="padding">
+	        <div class="row">
+	            <div class="container-fluid d-flex justify-content-center">
+                    <div class="card">
+                        <div class="card-header">Top Ranking Ratios</div>
+                        <div class="card-body">
+                            <div id="piechart"></div>
+                        </div>
+                    </div>
+	            </div>
+	        </div>
+	    </div>
+	</div>
+	{% for rank in ranking_stats %}
+		<input type="hidden" id="{{rank.0}}" value="{{rank.1}}">
+	{% endfor %}
+</div> <!-- End Pie Chart -->
+
+{% if medals %}
+	<!-- Start of Medals Gridview -->
+	<h2 style="margin-top: 50px">Medals</h2>
+	<div class="form-group">
+		<div class="card">
+			{% include "app/medalsinfo.html" %}
+		    <div class="card-header">Medals Achieved</div>
+		    <div class=" card-body h-100 row">
+		        {% for medal in medals %}
+		            <div class="col-self medal-position" data-toggle="modal" 
+		                    data-target="#{{medal.name.split | join:''}}">
+		                <img src="/media/{{medal.name}}.png" width="165px" 
+		                    height="165px" 
+		                    style="cursor: pointer;"
+		                    data-toggle="tooltip" 
+		                    data-placement="top" 
+		                    title="Achieved in {{medal.tournament.name}}">
+	                    <figcaption class="medal_img_caption">
+	                    	{{medal.name}}
+	                    </figcaption>
+		            </div>
+		            {% with medal.name as medal_name %}
+	                  {% include "app/medalsinfo.html" %}
+	                {% endwith %}
+		        {% endfor %}
+		    </div>
+		</div>
+	</div> <!-- End of Medals Gridview -->
+{% endif %}
+
+<!-- Start table of past tournaments -->
+<div class="form-row" style="margin-bottom: 20px">
+	<h2 style="margin-top: 50px">Tournaments History</h2>
+	{% for past in history %}
+		{% if past %}
+			<table class="table table-dark no_table_spacing" border="1">
+				<tr data-toggle="collapse" data-target=".{{past.0.url}}" 
+				data-parent="#accordionExample" 
+				onclick="accordionStatus('{{past.0.name}}')">
+					<th colspan="3" 
+					style="cursor: pointer; text-align: center;" 
+					id="{{past.0.name}}" 
+					data-toggle="tooltip" data-placement="top" 
+    				title="Click To Show">
+						<a style="color: white" href="/tournamentspage/
+						tournamentstats/{{past.0.url}}" 
+						data-toggle="tooltip" 
+						data-placement="top" title="">
+							{{past.0.name}} (Show)
+						</a>
+					</th>
+				</tr>
+				{% for matches in past %}
+					{% if matches != past.0 %}
+					    	<tr class="collapse {{past.0.url}}">
+							<td style="font-size: 20px; line-height: 10px; 
+							background-color: #000241; cursor: default; 
+							text-align: center;" 
+							colspan="3">
+								Round {{matches.3}}	
+							</td>
+						</tr>
+				    	<tr class="collapse {{past.0.url}}">
+							{% if matches.0 == matches.1%}
+								<td style="text-align: center; width:400px;
+								background-color: #013220" data-toggle="tooltip" 
+								data-placement="top" title="{{matches.1}} Won">
+									<a style="color: white" href="{{matches.1}}">
+										{{matches.1}}
+									</a>
+				                </td>
+				                <td style="text-align: center; 
+				                width:5%; cursor: default">vs</td>
+				                <td style="text-align: center; width:400px;
+								background-color: red" data-toggle="tooltip" 
+								data-placement="top" title="{{matches.2}} Lost">
+									<a style="color: white" href="{{matches.2}}">
+										{{matches.2}}
+									</a>
+				                </td>
+				            {% elif matches.0.name ==  'Draw'%}
+				            	<td style="text-align: center; width:400px;
+								background-color: #43464B" data-toggle="tooltip" 
+								data-placement="top" title="Draw">
+									<a style="color: white" href="{{matches.1}}">
+										{{matches.1}}
+									</a>
+				                </td>
+				                <td style="text-align: center; width:5%; 
+				                cursor: default">vs</td>
+				                <td style="text-align: center; width:400px;
+								background-color: #43464B" data-toggle="tooltip" 
+								data-placement="top" title="Draw">
+									<a style="color: white" href="{{matches.2}}">
+										{{matches.2}}
+									</a>
+				                </td>
+					        {% else %}
+				        		<td style="text-align: center; width:400px;
+								background-color: red" data-toggle="tooltip" 
+								data-placement="top" title="{{matches.1}} Lost">
+									<a style="color: white" href="{{matches.1}}">
+										{{matches.1}}
+									</a>
+				                </td>
+				                <td style="text-align: center; width:5%; 
+				                cursor: default">vs</td>
+				                <td style="text-align: center; width:400px;
+								background-color: #013220" data-toggle="tooltip" 
+								data-placement="top" title="{{matches.2}} Won">
+									<a style="color: white" href="{{matches.2}}">
+										{{matches.2}}
+									</a>
+				                </td>
+							{% endif %}
+						</tr>
+					{% endif %}
+				{% endfor %}
+			</table>
+		{% endif %}
+	{% endfor %}
+</div> <!-- End table of past tournaments -->
+{% endblock content %}

@@ -1,0 +1,10 @@
+{% extends "app/base.html" %}
+{% block content %}
+{% include "app/tournamentslog.html" %}
+<div class="form-group">
+  <a type="button" class="btn btn-dark" href="createtournamentpage/">
+    Create New Tournament
+  </a>
+</div>
+{% include "app/tournamentspagination.html" %}
+{% endblock content %}

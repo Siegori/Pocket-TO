@@ -1,0 +1,338 @@
+@import url("https://use.fontawesome.com/releases/v5.13.0/css/all.css");
+h1, h2, h3, h4, h5, h6 {
+  color: #ffffff;
+  font-family: "Roboto";
+  font-weight: bold;
+}
+
+.navbar-custom { 
+  background-color: #010114;
+}
+
+.navbar .nav-item:hover .nav-link { 
+  color: #fff;  
+}
+
+.navbar .nav-item:hover .dropdown-menu{ 
+  display: block; 
+}
+
+.site-header .navbar-nav .nav-link {
+  color: #cbd5db;
+}
+
+.site-header .navbar-nav .nav-link:hover {
+  color: #ffffff;
+}
+
+.site-header .navbar-nav .nav-link.active {
+  font-weight: 500;
+}
+
+.navbar-brand {
+  font-family: "Roboto";
+  font-size: 32px;
+}
+
+ul.sortable {
+  background-color: #2F4F4F;
+  border-radius: 3px;
+  width: 450px;
+  min-height: 35px;
+  list-style-type: none;
+  margin: 0;
+  padding: 0px;
+  border-radius: 3px;
+}
+
+#sortable1 li, #sortable2 li {
+  min-height: 35px;
+  padding: 5px;
+  font-size: 1.1em;
+  width: 450px;
+  border: 1px solid #2F4F4F;
+  cursor: pointer;
+  background-color: #000241;
+  border-radius: 3px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  max-height: 100%;
+  position: relative;
+  white-space: normal;
+  color: #ffffff;
+}
+
+li {
+  cursor: pointer;
+}
+
+label {
+  display: inline-block;
+  width: 100%;
+}
+
+.td_select {
+    background-color: #006400;
+}
+
+table, td {
+  background-color: #020432;
+  font-family: "Roboto";
+  font-size: 25px;
+}
+
+th {
+  background-color: #010114;
+  font-family: "Roboto";
+  font-size: 25px;
+}
+
+
+.strokeme {
+  text-shadow: -1px -1px 0 #ffffff, 1px -1px 0 #ffffff, -1px 1px 0 #ffffff, 1px 1px 0 #ffffff;
+}
+
+.parallax {
+
+  margin-top: 5rem;
+  /* The image used */
+  background-image: url('/media/background.jpg');
+
+  /* Set a specific height */
+  min-height: 500px; 
+
+  /* Create the parallax scrolling effect */
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+/*.panel-heading .accordion-toggle:after {
+  font-family: FontAwesome;
+  content: "\f068";
+  float: right;
+}
+
+.panel-heading .accordion-toggle.collapsed:after {
+  float: right !important;
+  content: "\f067";
+}*/
+
+tr.collapse.in {
+  display:table-row !important;
+}
+
+.card-header {
+  background-color: #010114; 
+  color: white
+}
+
+.card {
+  background-color: #020432;
+}
+
+.chartjs-size-monitor {
+  position: absolute; 
+  left: 0px; 
+  top: 0px; 
+  right: 0px; 
+  bottom: 0px; 
+  overflow: hidden; 
+  pointer-events: none; 
+  visibility: hidden;
+  z-index: -1;
+}
+
+.chartjs-size-monitor-expand {
+  position:absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  overflow: hidden;
+  pointer-events: none;
+  visibility: hidden; 
+  z-index:-1;
+}
+
+.chartjs-size-monitor-shrink {
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom:0 ;
+  overflow: hidden;
+  pointer-events: none;
+  visibility: hidden; 
+  z-index: -1;
+}
+
+.chartjs-render-monitor {
+  display: block; 
+  width: 499px; 
+  height: 400px;
+}
+
+.ui-state-default {
+  background: none;
+  color: white;
+  min-height: 40px;
+}
+
+.ui-menu {
+    background-color: white;
+}
+
+.ui-menu-item {
+  min-height: 40px;
+  border-bottom: 1px solid grey;
+}
+
+.ui-menu .ui-menu-item:hover, 
+.ui-menu .ui-menu-item .ui-state-active {
+    background: #428BCA;
+    min-height: 40px;
+}
+
+.image-spacing {
+  margin-right: 5px; 
+  margin-left: 5px; 
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.tournament_medals_background {
+  /*background-color: #020432; */
+}
+
+.medals_header {
+  position: absolute;
+  left: 895px;
+  top: 83px
+}
+
+.medal_img_caption {
+  color: white; 
+  text-align: center; 
+}
+
+.player_name_caption {
+  color: white; 
+  text-align: center; 
+  font-size: 11px
+}
+
+.img_grid {
+  margin-left: 45px;
+  margin-bottom: 20px; 
+  margin-top: 10px;
+  cursor: pointer;
+}
+
+.vs {
+  text-align: center; 
+  width:5%; 
+  cursor: default;
+  font-size: 20px;
+}
+
+.welcome_header {
+  font-size: 100px;
+  margin-top: 200px;
+}
+
+.home_player_btn {
+  width: 120px; 
+  margin-right: 10px
+}
+
+.home_tournament_btn {
+  margin-left: 10px
+}
+
+th, td, a.player_name_text {
+  color: white; 
+  font-size: 20px;
+}
+
+td.progress_status {
+  background-color: #013220;
+  font-size: 20px;
+  width: 30%;
+}
+
+a.navbar-brand {
+  /*font-size: 30px;*/
+}
+
+td.winner {
+  background-color: #013220;
+  text-align: center; 
+  width:400px;
+}
+
+td.loser {
+  background-color: #bb1b1b;
+  text-align: center; 
+  width:400px;
+}
+
+td.draw {
+  text-align: center; 
+  width:400px; 
+  background-color: #43464B;
+}
+
+.input_text {
+  color: #ffffff; 
+  font-size: 20px; 
+  font-family: 'Roboto'; 
+}
+
+.page_select, .page-link{
+  color: #fff;
+  background-color: #343a40;
+  border-color: #1d2124;
+}
+
+.page-link:hover {
+  border:solid 1px #1f1f1f;
+  background: #23272b;
+  color: #fff;
+}
+
+.pagenumbers a.current {
+  background: blue 
+}
+
+.page-item {
+  width: 100px; 
+  text-align: center;
+}
+
+.page_select {
+  width: 45%; 
+}
+
+.page-link-disabled {
+  opacity: .65;
+  cursor: default;
+  border: 0;
+}
+
+.disable-hover {
+  pointer-events: none;
+}
+
+.medal-position {
+  margin-left: 50px; 
+  margin-bottom: 50px; 
+  margin-top: 10px
+}
+
+.no_table_spacing {
+  padding: 0 !important; 
+  margin: 0 !important;
+}

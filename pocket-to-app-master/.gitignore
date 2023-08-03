@@ -1,0 +1,6 @@
+db.sqlite3
+*.swp
+*.pyc
+*/migrations/
+__pycache__/
+app/mydebugger.py

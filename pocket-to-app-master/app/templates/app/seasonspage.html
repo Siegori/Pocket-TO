@@ -1,0 +1,25 @@
+{% extends "app/base.html" %}
+{% block content %}
+<div class="form-group">
+  <h1>Seasons Log</h1>
+  <table class="table table-dark" style="width:100%" border="1">
+    <tr>
+      <th>Seasons</th>
+      <th>Date Started</th>
+    </tr>
+    {% if seasons %}
+      {% for season in seasons %}
+        <tr style="height: 50px">
+          <td>
+            <a class="player_name_text" 
+              href="seasonspage/seasonstats/{{season.url}}?page=1">
+              {{ season.name }}
+            </a>
+          </td>
+          <td class="progress_status">{{ season.start_date }}</td>
+        </tr>
+      {% endfor %}
+    {% endif %}
+  </table>
+</div>
+{% endblock content %}

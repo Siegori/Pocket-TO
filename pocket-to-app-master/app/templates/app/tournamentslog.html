@@ -1,0 +1,27 @@
+<!-- Start of table of tournaments -->
+<div class="form-group">
+  <h1>Tournaments Log</h1>
+  <table class="table table-dark" style="width:100%" border="1">
+    <tr>
+      <th>Tournaments</th>
+      <th>In Progress</th>
+    </tr>
+    {% if tournamentspages %}
+      {% for tournament in tournamentspages %}
+        <tr style="height: 50px">
+          <td>
+            <a class="player_name_text" 
+            href="/tournamentspage/tournamentstats/{{tournament.url}}">
+              {{ tournament.name }}
+            </a>
+          </td>
+          {% if tournament.isRunning %}
+            <td class="progress_status">In Progress</td>
+          {% else %}
+            <td class="progress_status">Finished {{tournament.end_date}}</td>
+          {% endif %}
+        </tr>
+      {% endfor %}
+    {% endif %}
+  </table>
+</div><!-- End of table of tournaments --> 
