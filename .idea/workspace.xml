@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="fade55c0-8e91-4340-9e2e-461c3b4c44bb" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/Pocket-TO.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Pocket-TO.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pocket-to-app-master/.idea/.name" beforeDir="false" afterPath="$PROJECT_DIR$/pocket-to-app-master/.idea/.name" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pocket-to-app-master/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pocket-to-app-master/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pocket-to-app-master/.idea/pocket-to-app-master.iml" beforeDir="false" afterPath="$PROJECT_DIR$/pocket-to-app-master/.idea/pocket-to-app-master.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pocket-to-app-master/docs/_build/doctrees/environment.pickle" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pocket-to-app-master/docs/_build/doctrees/index.doctree" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pocket-to-app-master/docs/_build/doctrees/maths.doctree" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pocket-to-app-master/docs/_build/doctrees/modules.doctree" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pocket-to-app-master/docs/_build/html/.buildinfo" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pocket-to-app-master/docs/_build/html/_modules/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pocket-to-app-master/docs/_build/html/_modules/maths/add.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pocket-to-app-master/docs/_build/html/_modules/maths/divide.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pocket-to-app-master/docs/_build/html/_modules/maths/multiply.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pocket-to-app-master/docs/_build/html/_modules/maths/subtract.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pocket-to-app-master/docs/_build/html/_sources/index.rst.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pocket-to-app-master/docs/_build/html/_sources/maths.rst.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pocket-to-app-master/docs/_build/html/_sources/modules.rst.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pocket-to-app-master/docs/_build/html/_static/_sphinx_javascript_frameworks_compat.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pocket-to-app-master/docs/_build/html/_static/basic.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pocket-to-app-master/docs/_build/html/_static/css/badge_only.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pocket-to-app-master/docs/_build/html/_static/css/fonts/Roboto-Slab-Bold.woff" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pocket-to-app-master/docs/_build/html/_static/css/fonts/Roboto-Slab-Bold.woff2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pocket-to-app-master/docs/_build/html/_static/css/fonts/Roboto-Slab-Regular.woff" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pocket-to-app-master/docs/_build/html/_static/css/fonts/Roboto-Slab-Regular.woff2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pocket-to-app-master/docs/_build/html/_static/css/fonts/fontawesome-webfont.eot" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pocket-to-app-master/docs/_build/html/_static/css/fonts/fontawesome-webfont.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pocket-to-app-master/docs/_build/html/_static/css/fonts/fontawesome-webfont.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pocket-to-app-master/docs/_build/html/_static/css/fonts/fontawesome-webfont.woff" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pocket-to-app-master/docs/_build/html/_static/css/fonts/fontawesome-webfont.woff2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pocket-to-app-master/docs/_build/html/_static/css/fonts/lato-bold-italic.woff" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pocket-to-app-master/docs/_build/html/_static/css/fonts/lato-bold-italic.woff2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pocket-to-app-master/docs/_build/html/_static/css/fonts/lato-bold.woff" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pocket-to-app-master/docs/_build/html/_static/css/fonts/lato-bold.woff2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pocket-to-app-master/docs/_build/html/_static/css/fonts/lato-normal-italic.woff" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pocket-to-app-master/docs/_build/html/_static/css/fonts/lato-normal-italic.woff2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pocket-to-app-master/docs/_build/html/_static/css/fonts/lato-normal.woff" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pocket-to-app-master/docs/_build/html/_static/css/fonts/lato-normal.woff2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pocket-to-app-master/docs/_build/html/_static/css/theme.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pocket-to-app-master/docs/_build/html/_static/doctools.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pocket-to-app-master/docs/_build/html/_static/documentation_options.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pocket-to-app-master/docs/_build/html/_static/file.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pocket-to-app-master/docs/_build/html/_static/jquery-3.6.0.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pocket-to-app-master/docs/_build/html/_static/jquery.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pocket-to-app-master/docs/_build/html/_static/js/badge_only.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pocket-to-app-master/docs/_build/html/_static/js/html5shiv-printshiv.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pocket-to-app-master/docs/_build/html/_static/js/html5shiv.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pocket-to-app-master/docs/_build/html/_static/js/theme.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pocket-to-app-master/docs/_build/html/_static/language_data.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pocket-to-app-master/docs/_build/html/_static/minus.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pocket-to-app-master/docs/_build/html/_static/plus.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pocket-to-app-master/docs/_build/html/_static/pygments.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pocket-to-app-master/docs/_build/html/_static/searchtools.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pocket-to-app-master/docs/_build/html/_static/sphinx_highlight.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pocket-to-app-master/docs/_build/html/_static/underscore-1.13.1.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pocket-to-app-master/docs/_build/html/_static/underscore.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pocket-to-app-master/docs/_build/html/genindex.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pocket-to-app-master/docs/_build/html/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pocket-to-app-master/docs/_build/html/maths.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pocket-to-app-master/docs/_build/html/modules.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pocket-to-app-master/docs/_build/html/objects.inv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pocket-to-app-master/docs/_build/html/py-modindex.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pocket-to-app-master/docs/_build/html/search.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pocket-to-app-master/docs/_build/html/searchindex.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pocket-to-app-master/docs/conf.py" beforeDir="false" afterPath="$PROJECT_DIR$/pocket-to-app-master/docs/conf.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pocket-to-app-master/docs/index.rst" beforeDir="false" afterPath="$PROJECT_DIR$/pocket-to-app-master/docs/index.rst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pocket-to-app-master/docs/make.bat" beforeDir="false" afterPath="$PROJECT_DIR$/pocket-to-app-master/docs/make.bat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pocket-to-app-master/docs/maths.rst" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pocket-to-app-master/docs/modules.rst" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectId" id="2TU8IKURGyV8YTQ97FTrixMFZsp" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;
+  }
+}</component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="fade55c0-8e91-4340-9e2e-461c3b4c44bb" name="Changes" comment="" />
+      <created>1691086218518</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1691086218518</updated>
+    </task>
+    <servers />
+  </component>
+</project>
