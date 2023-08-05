@@ -5,6 +5,7 @@
 
 # -- Project information -----------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#project-information
+<<<<<<< Updated upstream
 import os
 import sys
 import django
@@ -13,6 +14,10 @@ os.environ['DJANGO_SETTINGS_MODULE'] = "pocketproject.settings"
 django.setup()
 
 project = 'pocket-TO'
+=======
+
+project = 'Pocket-TO'
+>>>>>>> Stashed changes
 copyright = '2023, Kealin Wambach and Joseph Kiru'
 author = 'Kealin Wambach and Joseph Kiru'
 release = '1'
@@ -20,9 +25,13 @@ release = '1'
 # -- General configuration ---------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#general-configuration
 
+<<<<<<< Updated upstream
 extensions = ['sphinx.ext.autodoc',
               'sphinx.ext.viewcode',
               'sphinx.ext.napoleon']
+=======
+extensions = []
+>>>>>>> Stashed changes
 
 templates_path = ['_templates']
 exclude_patterns = ['_build', 'Thumbs.db', '.DS_Store']
